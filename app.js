@@ -7,8 +7,16 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var http = require('http');
 
 var app = express();
+
+
+
+
+app.set('port', process.env.PORT || 3000);
+//app.set('port', 8099);
+//app.listen(8099);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -55,6 +63,12 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+// for woker crawler
+var defaultPort = 8089;
+var defaultMasterHost = 'localhost:' + defaultPort;
+var Crawler = require('./slave');
 
+var options = {host: arguments.h || defaultMasterHost, requestInterval: 1};
+var crawler = new Crawler(options);
 
 module.exports = app;

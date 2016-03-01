@@ -12,6 +12,13 @@
     "express": "~4.13.1",
     "jade": "~1.11.0",
     "morgan": "~1.6.1",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "cheerio": "^0.19.0",
+    "fs-extra": "^0.24.0",
+    "minimist": "*",
+    "node-uuid": "^1.4.3",
+    "request": "^2.65.0",
+    "sqlite3": "^3.1.0",
+    "ws": "^0.8.0"
   }
 }
